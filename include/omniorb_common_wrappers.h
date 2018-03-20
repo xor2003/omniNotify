@@ -124,22 +124,22 @@ do { \
 #  include <omniORB4/internal/orbParameters.h>
 #  define WRAPPED_ORB_SET_CLIENT_TIMEOUT(m) \
 do { \
-  omni::orbParameters::clientCallTimeOutPeriod.s = m / 1000; \
-  omni::orbParameters::clientCallTimeOutPeriod.ns = (m % 1000) * 1000000; \
+  omni::orbParameters::clientCallTimeOutPeriod.secs = m / 1000; \
+  omni::orbParameters::clientCallTimeOutPeriod.nanosecs = (m % 1000) * 1000000; \
 } while (0)
 #  define WRAPPED_ORB_SET_SERVER_TIMEOUT(m) \
 do { \
-  omni::orbParameters::serverCallTimeOutPeriod.s = m / 1000; \
-  omni::orbParameters::serverCallTimeOutPeriod.ns = (m % 1000) * 1000000; \
+  omni::orbParameters::serverCallTimeOutPeriod.secs = m / 1000; \
+  omni::orbParameters::serverCallTimeOutPeriod.nanosecs = (m % 1000) * 1000000; \
 } while (0)
 #  define WRAPPED_ORB_SET_SCAN_GRANULARITY(s) \
 do { \
   omni::orbParameters::scanGranularity = s; \
 } while (0)
 #  define WRAPPED_ORB_GET_CLIENT_TIMEOUT() \
-     (omni::orbParameters::clientCallTimeOutPeriod.s * 1000 + omni::orbParameters::clientCallTimeOutPeriod.ns / 1000000)
+     (omni::orbParameters::clientCallTimeOutPeriod.secs * 1000 + omni::orbParameters::clientCallTimeOutPeriod.nanosecs / 1000000)
 #  define WRAPPED_ORB_GET_SERVER_TIMEOUT() \
-     (omni::orbParameters::serverCallTimeOutPeriod.s * 1000 + omni::orbParameters::serverCallTimeOutPeriod.ns / 1000000)
+     (omni::orbParameters::serverCallTimeOutPeriod.secs * 1000 + omni::orbParameters::serverCallTimeOutPeriod.nanosecs / 1000000)
 #  define WRAPPED_ORB_GET_SCAN_GRANULARITY() \
      (omni::orbParameters::scanGranularity)
 
